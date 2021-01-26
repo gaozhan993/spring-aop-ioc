@@ -11,20 +11,21 @@ public class SpringApplication {
 //        ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");
         //注解
 //        ApplicationContext context = new AnnotationConfigApplicationContext("cn.com.taiji.spring");
+
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(AppConfig.class);
+
 //        未加Compton注解需要 add 加入到context
 //        context.addApplicationListener(new ApplicationStartedListener());
+
         context.refresh();
+//        CollectionUtils.arrayToList(context.getBeanDefinitionNames()).forEach(item-> System.out.println(item));
 
-//        for ( String beanName:context.getBeanDefinitionNames()){
-//            System.out.println(beanName);
-//        }
+//        System.out.println("======================");
 
-        CollectionUtils.arrayToList(context.getBeanDefinitionNames()).forEach(item-> System.out.println(item));
-
-        System.out.println("======================");
         UserService userService = context.getBean(UserService.class);
+        UserService userService1 = context.getBean(UserService.class);
+        System.out.println(userService==userService1);
         userService.save();
     }
 }

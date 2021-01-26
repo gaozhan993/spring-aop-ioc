@@ -25,13 +25,13 @@ public class AppConfig{
 //    }
 
 
-    //使用注解实现监听类
-    @EventListener
-    public void refreshListener(ContextRefreshedEvent event){
-        System.out.println(event.getTimestamp());
-        ApplicationContext context = event.getApplicationContext();
-        CollectionUtils.arrayToList(context.getBeanDefinitionNames()).forEach(item-> System.out.println(item));
-        System.out.println("································");
-    }
+    //使用注解实现监听类  任意config注解下
+//    @EventListener
+//    public void refreshListener(ContextRefreshedEvent event){
+//        System.out.println(event.getTimestamp());
+//        ApplicationContext context = event.getApplicationContext();
+//        CollectionUtils.arrayToList(context.getBeanDefinitionNames()).forEach(item-> System.out.println(item));
+//        System.out.println("································");
+//    }
 
 }
