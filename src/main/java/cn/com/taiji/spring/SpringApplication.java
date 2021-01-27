@@ -23,9 +23,20 @@ public class SpringApplication {
 
 //        System.out.println("======================");
 
-        UserService userService = context.getBean(UserService.class);
-        UserService userService1 = context.getBean(UserService.class);
-        System.out.println(userService==userService1);
+//        UserService userService = context.getBean(UserService.class);
+//        UserService userService1 = context.getBean(UserService.class);
+//        System.out.println(userService==userService1);
+
+//         UserService userService2 = (UserService) context.getBean(UserService.class);
+//         userService2.save();
+
+
+        UserService userService = (UserService) context.getBean("userService");
         userService.save();
+
+//          UserDao userDao = context.getBean(UserDao.class);
+//          userDao.save();
+
+
     }
 }

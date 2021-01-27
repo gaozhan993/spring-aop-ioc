@@ -8,6 +8,6 @@ public class SchedueTask implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("schedueTask init finsh");
+//        System.out.println("schedueTask init finsh");
     }
 }
